@@ -1,0 +1,14 @@
+# Startet die Website mit `docker compose up`
+services:
+  app:
+    build: .
+    ports:
+      - "5173:5173"
+    volumes:
+      # Projektordner einbinden, damit Änderungen sofort sichtbar sind (Hot Reload)
+      - .:/app
+      # Die im Image installierten Linux-Pakete behalten, nicht vom Host überschreiben
+      - /app/node_modules
+    environment:
+      # Dateiänderungen aktiv prüfen, weil Docker Desktop sie sonst teils nicht meldet
+      VITE_POLLING: "true"
