@@ -4,6 +4,10 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="text-scale" content="scale" />
+		<!-- Ohne JS bleibt alles sichtbar: Nur mit dieser Klasse blendet das CSS [data-reveal] bis zur Animation aus, so entsteht kein Aufblitzen -->
+		<script>
+			document.documentElement.classList.add('js');
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

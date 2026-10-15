@@ -5,6 +5,7 @@
 	import { Input } from '#lib/components/ui/input/index.js';
 	import { Label } from '#lib/components/ui/label/index.js';
 	import { Switch } from '#lib/components/ui/switch/index.js';
+	import { reveal } from '#lib/motion.js';
 
 	let abbruch = $state(false);
 	let typischGesendet = $state(false);
@@ -21,9 +22,9 @@
 
 <section id="robust" aria-labelledby="robust-titel" class="section-pad bg-muted">
 	<div class="wrap flex flex-col gap-16">
-		<div class="mx-auto flex flex-col items-center gap-6 text-center">
-			<h2 id="robust-titel" class="max-w-[16ch] text-head">Auch wenn etwas schiefgeht</h2>
-			<p class="max-w-[40ch]">
+		<div class="mx-auto flex flex-col items-center gap-6 text-center" use:reveal>
+			<h2 id="robust-titel" data-reveal class="max-w-[16ch] text-head">Auch wenn etwas schiefgeht</h2>
+			<p data-reveal class="max-w-[40ch]">
 				Im Zug bricht die Verbindung ab. Das Firmennetz blockiert Skripte. Ein altes Handy ist zu
 				langsam. Viele Websites zeigen dann nur eine leere Fläche.
 			</p>
@@ -71,13 +72,13 @@
 			</div>
 		</div>
 
-		<div class="grid-12 gap-y-6">
-			<p class="col-span-12 max-w-[60ch] lg:col-span-6">
+		<div class="grid-12 gap-y-6" use:reveal>
+			<p data-reveal class="col-span-12 max-w-[60ch] lg:col-span-6">
 				Bei SvelteKit steckt das Wichtigste schon im ersten Paket: Text, Bilder, Links und
 				Formulare. Sie funktionieren auch ohne JavaScript. JavaScript macht die Seite nur
 				bequemer, zum Beispiel weil sie beim Absenden nicht neu lädt.
 			</p>
-			<p class="col-span-12 max-w-[60ch] lg:col-span-6 lg:col-start-1">
+			<p data-reveal class="col-span-12 max-w-[60ch] lg:col-span-6 lg:col-start-1">
 				Fachleute nennen das
 				<dfn class="font-semibold not-italic">progressive Verbesserung</dfn>: Zuerst kommt ein
 				Grundgerüst, das immer funktioniert. Die Extras kommen obendrauf.

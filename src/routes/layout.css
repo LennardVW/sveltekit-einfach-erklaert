@@ -151,6 +151,12 @@ html {
 	}
 }
 
+@media (prefers-reduced-motion: no-preference) {
+	html.js [data-reveal] {
+		visibility: hidden;
+	}
+}
+
 @layer components {
 	/* Seitenbreite und 12-Spalten-Raster */
 	.wrap {

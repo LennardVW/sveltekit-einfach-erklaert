@@ -12,7 +12,7 @@
 	<div class="wrap flex h-full items-center justify-between gap-4">
 		<a
 			href="#start"
-			class="press -mx-2 rounded-lg px-2 py-2 text-small font-semibold hover:opacity-70"
+			class="press -mx-2 rounded-lg px-2 py-2 text-base font-semibold whitespace-nowrap hover:opacity-70 sm:text-small"
 		>
 			SvelteKit, einfach erklärt
 		</a>
@@ -20,9 +20,14 @@
 			<DropdownMenu.Root>
 				<DropdownMenu.Trigger>
 					{#snippet child({ props })}
-						<Button {...props} variant="secondary" class="h-10 gap-2 px-4 text-small">
+						<Button
+							{...props}
+							variant="secondary"
+							aria-label="Kapitel"
+							class="h-10 gap-2 px-4 text-small max-sm:w-10 max-sm:px-0"
+						>
 							<List />
-							Kapitel
+							<span class="max-sm:hidden">Kapitel</span>
 						</Button>
 					{/snippet}
 				</DropdownMenu.Trigger>

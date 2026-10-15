@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Check from '@lucide/svelte/icons/check';
 	import Minus from '@lucide/svelte/icons/minus';
+	import { reveal } from '#lib/motion.js';
 
 	const namen = [
 		'Spotify',
@@ -28,13 +29,13 @@
 
 <section id="nutzer" aria-labelledby="nutzer-titel" class="section-pad">
 	<div class="wrap flex flex-col gap-16">
-		<div class="flex flex-col gap-6">
-			<h2 id="nutzer-titel" class="max-w-[24ch] text-head">
+		<div class="flex flex-col gap-6" use:reveal>
+			<h2 id="nutzer-titel" data-reveal class="max-w-[24ch] text-head">
 				<span class="max-sm:hidden">Wer SvelteKit nutzt und für wen es sich lohnt</span>
 				<span class="sm:hidden">Wer es nutzt und für wen es sich lohnt</span>
 			</h2>
 			<div class="grid-12">
-				<p class="col-span-12 max-w-[60ch] lg:col-span-7">
+				<p data-reveal class="col-span-12 max-w-[60ch] lg:col-span-7">
 					Svelte, die Grundlage von SvelteKit, hat Rich Harris erfunden. Er hat interaktive
 					Grafiken für Zeitungen gebaut, etwa für den Guardian und die New York Times. Dort zählt
 					jede Sekunde Ladezeit. Svelte ist
@@ -44,12 +45,13 @@
 			</div>
 		</div>
 
-		<div class="flex flex-col gap-6">
+		<div class="flex flex-col gap-6" use:reveal>
 			<ul class="flex flex-wrap gap-x-10 gap-y-3 sm:gap-x-14">
 				{#each namen as name (name)}
 					<li
 						data-name
-						class="press text-head text-muted-foreground hover:text-foreground"
+						data-reveal
+						class="text-head text-muted-foreground transition-colors duration-180 hover:text-foreground"
 					>
 						{name}
 					</li>
@@ -67,7 +69,7 @@
 				<ul class="flex flex-col gap-4">
 					{#each lohnt as punkt (punkt)}
 						<li class="flex max-w-[60ch] gap-3">
-							<Check class="mt-1.5 size-5 shrink-0 text-primary" aria-hidden="true" />
+							<Check class="mt-1.5 size-5 shrink-0 text-primary dark:text-chart-2" aria-hidden="true" />
 							<span>{punkt}</span>
 						</li>
 					{/each}

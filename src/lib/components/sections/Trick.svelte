@@ -2,6 +2,7 @@
 	import Package from '@lucide/svelte/icons/package';
 	import * as Card from '#lib/components/ui/card/index.js';
 	import { Button } from '#lib/components/ui/button/index.js';
+	import { reveal, scene } from '#lib/motion.js';
 
 	// Als String, damit Svelte die geschweiften Klammern nicht auswertet
 	const beispiel = `<script>
@@ -14,19 +15,49 @@
 
 	let klicks = $state(0);
 
+	// Links der Lieferung steht die Arbeit vorher, rechts die beim Besucher.
+	// Beim Bausatz kommt sie nach der Lieferung, deshalb dauert jeder Schritt dort doppelt so lang.
+	function build(tl: gsap.core.Timeline, node: HTMLElement) {
+		const seiten = (lane: string) =>
+			node.querySelectorAll(`[data-lane="${lane}"] .grid > div`);
+		const [svelteVorher, svelteBesucher] = seiten('svelte');
+		const [bausatzVorher, bausatzBesucher] = seiten('bausatz');
+		tl.from(node.querySelector('[data-delivery-label]'), { autoAlpha: 0, y: -8, duration: 0.3 })
+			.from(node.querySelector('[data-delivery-bar]'), {
+				scaleY: 0,
+				transformOrigin: 'top',
+				duration: 1,
+				ease: 'none'
+			})
+			.from(svelteVorher.querySelectorAll('[data-step]'), {
+				autoAlpha: 0,
+				x: -24,
+				duration: 0.5,
+				stagger: 0.5
+			})
+			.from(svelteBesucher.querySelectorAll('[data-step]'), { autoAlpha: 0, scale: 0.9, duration: 0.5 })
+			.from(bausatzVorher.querySelectorAll('[data-step]'), { autoAlpha: 0, x: -24, duration: 0.5 })
+			.from(bausatzBesucher.querySelectorAll('[data-step]'), {
+				autoAlpha: 0,
+				x: 24,
+				duration: 1,
+				stagger: 1
+			});
+	}
+
 	const chip = 'rounded-lg bg-background px-4 py-3 text-small font-medium';
 </script>
 
 <section id="trick" aria-labelledby="trick-titel" class="pt-(--section-gap)">
-	<div class="wrap">
-		<h2 id="trick-titel" class="text-head">Der Trick: Die Arbeit passiert vorher</h2>
+	<div class="wrap" use:reveal>
+		<h2 id="trick-titel" data-reveal class="text-head">Der Trick: Die Arbeit passiert vorher</h2>
 		<div class="grid-12 mt-10 gap-y-6">
-			<p class="col-span-12 max-w-[60ch] lg:col-span-6">
+			<p data-reveal class="col-span-12 max-w-[60ch] lg:col-span-6">
 				Stellen Sie sich zwei Möbelhäuser vor. Das erste liefert einen Bausatz: Teile, Schrauben,
 				Anleitung. Aufbauen müssen Sie selbst, bei sich zu Hause. Das zweite baut den Schrank in der
 				Werkstatt auf und liefert ihn fertig.
 			</p>
-			<p class="col-span-12 max-w-[60ch] lg:col-span-6 lg:col-start-1">
+			<p data-reveal class="col-span-12 max-w-[60ch] lg:col-span-6 lg:col-start-1">
 				Svelte arbeitet wie das zweite Möbelhaus. Ein
 				<dfn class="font-semibold not-italic">Compiler</dfn>, also ein Übersetzungsprogramm, baut
 				die Website schon beim Erstellen fertig zusammen. Beim Besucher kommt nur an, was wirklich
@@ -35,17 +66,18 @@
 		</div>
 
 		<!-- Vergleichsgrafik: zwei Bahnen, getrennt durch die Lieferung -->
-		<div class="relative mt-16 md:pt-12">
+		<div class="relative mt-16 md:pt-12" use:scene={{ build, pin: true, length: 200 }}>
 			<div
 				data-delivery
 				class="absolute inset-y-0 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center md:flex"
 			>
 				<span
+					data-delivery-label
 					class="rounded-lg bg-primary px-3 py-1 text-small font-medium text-primary-foreground"
 				>
 					Lieferung
 				</span>
-				<span class="w-1 flex-1 bg-primary"></span>
+				<span data-delivery-bar class="w-1 flex-1 bg-primary"></span>
 			</div>
 
 			<div

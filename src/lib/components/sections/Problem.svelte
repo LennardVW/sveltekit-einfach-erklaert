@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Browser from '#lib/components/Browser.svelte';
+	import { reveal, scene } from '#lib/motion.js';
 
 	// Von unten nach oben: breit bis klein
 	const kisten = [
@@ -9,23 +10,33 @@
 		{ name: 'Hilfsprogramme', breite: 'w-1/2', akzent: false },
 		{ name: 'Ihre eigentliche Seite', breite: 'w-1/3', akzent: true }
 	];
+
+	// Die Kisten fallen von oberhalb des Fensters an ihren Platz, die orange zuletzt
+	function build(tl: gsap.core.Timeline, node: HTMLElement) {
+		tl.from(node.querySelectorAll('[data-crate]'), {
+			y: (_, el: HTMLElement) => -(el.offsetTop + el.offsetHeight),
+			autoAlpha: 0,
+			duration: 1,
+			stagger: 0.7
+		}).from(node.querySelector('figcaption'), { autoAlpha: 0, duration: 0.6 }, '>');
+	}
 </script>
 
 <section id="problem" aria-labelledby="problem-titel" class="section-pad">
-	<div class="wrap grid-12 gap-y-12">
-		<h2 id="problem-titel" class="col-span-12 max-w-[20ch] text-head">
+	<div class="wrap grid-12 gap-y-12" use:reveal use:scene={{ build, pin: true, length: 180 }}>
+		<h2 id="problem-titel" data-reveal class="col-span-12 max-w-[20ch] text-head">
 			Viele Websites schleppen zu viel mit
 		</h2>
 		<div class="col-span-12 flex flex-col gap-6 lg:col-span-5">
-			<p class="max-w-[60ch]">
+			<p data-reveal class="max-w-[60ch]">
 				Bevor Sie auf einer Website etwas lesen können, lädt Ihr Browser alles herunter, was die
 				Seite braucht. Bei vielen modernen Websites ist das erstaunlich viel.
 			</p>
-			<p class="max-w-[60ch]">
+			<p data-reveal class="max-w-[60ch]">
 				Ein großer Teil davon ist <dfn class="font-semibold not-italic">JavaScript</dfn>. Das sind
 				Anweisungen, die der Browser ausführt, damit Knöpfe, Menüs und Formulare reagieren.
 			</p>
-			<p class="max-w-[60ch]">
+			<p data-reveal class="max-w-[60ch]">
 				Oft schickt eine Website nicht nur ihre eigenen Anweisungen mit, sondern einen ganzen
 				Werkzeugkasten. Ihr Browser muss ihn erst auspacken, bevor er die Seite zeigen kann. Auf
 				einem schnellen Laptop merkt man das kaum. Auf einem älteren Handy oder im Zug schon.
