@@ -7,5 +7,18 @@ export default defineConfig({
 	},
 	testDir: 'e2e',
 	use: { baseURL: 'http://localhost:4173' },
-	projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }]
+	projects: [
+		{ name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+		{
+			name: 'mobile',
+			// iPhone-Werte, aber mit Chromium, damit nur ein Browser installiert sein muss
+			use: {
+				...devices['iPhone 13'],
+				browserName: 'chromium',
+				viewport: { width: 375, height: 812 },
+				isMobile: true,
+				hasTouch: true
+			}
+		}
+	]
 });

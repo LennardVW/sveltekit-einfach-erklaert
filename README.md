@@ -6,19 +6,20 @@ Eine interaktive Website, die SvelteKit für Menschen ohne IT-Hintergrund erklä
 
 1. [Docker Desktop](https://www.docker.com/products/docker-desktop/) installieren und starten.
 2. Dieses Repository herunterladen (grüner Button "Code", dann "Download ZIP") und entpacken.
-3. Ein Terminal im entpackten Ordner öffnen und eingeben:
+3. Ein Terminal im entpackten Ordner öffnen (Mac: Programm „Terminal“, Windows: „PowerShell“) und eingeben:
 
    ```
    docker compose up
    ```
 
-4. Im Browser http://localhost:5173 öffnen.
-5. Beenden mit Strg+C.
+4. Beim ersten Start lädt Docker alles Nötige herunter. Das dauert einige Minuten.
+5. Im Browser http://localhost:5173 öffnen.
+6. Beenden mit Strg+C im Terminal.
 
 ## Starten in GitHub Codespaces
 
 1. Auf GitHub "Code", dann "Codespaces", dann "Create codespace" wählen.
-2. Warten, bis alles eingerichtet ist. Die Seite öffnet sich danach von selbst.
+2. Warten, bis alles eingerichtet ist (beim ersten Mal einige Minuten). Die Seite öffnet sich danach von selbst.
 3. Falls nicht: unten den Tab "Ports" öffnen und bei Port 5173 auf das Weltkugel-Symbol klicken.
 
 ## Prüfen und testen
