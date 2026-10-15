@@ -37,7 +37,7 @@
 		use:scene={{
 			build,
 			pin: true,
-			length: 220,
+			length: 120,
 			onProgress: (p) => (aktiv = Math.min(3, Math.floor(p * 4)))
 		}}
 	>

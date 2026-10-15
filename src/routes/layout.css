@@ -170,8 +170,9 @@ html {
 		grid-template-columns: repeat(12, minmax(0, 1fr));
 		column-gap: var(--col-gap);
 	}
+	/* Halber Abstand oben und unten: zwischen zwei Abschnitten ergibt das genau einen Abstand */
 	.section-pad {
-		padding-block: var(--section-gap);
+		padding-block: calc(var(--section-gap) / 2);
 	}
 	/* Weiche Rückmeldung für Bedienelemente */
 	.press {

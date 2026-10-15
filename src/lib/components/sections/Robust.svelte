@@ -20,7 +20,7 @@
 	}
 </script>
 
-<section id="robust" aria-labelledby="robust-titel" class="section-pad bg-muted">
+<section id="robust" aria-labelledby="robust-titel" class="py-(--section-gap) bg-muted">
 	<div class="wrap flex flex-col gap-16">
 		<div class="mx-auto flex flex-col items-center gap-6 text-center" use:reveal>
 			<h2 id="robust-titel" data-reveal class="max-w-[16ch] text-head">Auch wenn etwas schiefgeht</h2>

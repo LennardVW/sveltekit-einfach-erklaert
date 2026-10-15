@@ -48,7 +48,7 @@
 	const chip = 'rounded-lg bg-background px-4 py-3 text-small font-medium';
 </script>
 
-<section id="trick" aria-labelledby="trick-titel" class="pt-(--section-gap)">
+<section id="trick" aria-labelledby="trick-titel" class="pt-[calc(var(--section-gap)/2)]">
 	<div class="wrap" use:reveal>
 		<h2 id="trick-titel" data-reveal class="text-head">Der Trick: Die Arbeit passiert vorher</h2>
 		<div class="grid-12 mt-10 gap-y-6">
@@ -66,7 +66,7 @@
 		</div>
 
 		<!-- Vergleichsgrafik: zwei Bahnen, getrennt durch die Lieferung -->
-		<div class="relative mt-16 md:pt-12" use:scene={{ build, pin: true, length: 200 }}>
+		<div class="relative mt-16 md:pt-12" use:scene={{ build, pin: true, length: 150 }}>
 			<div
 				data-delivery
 				class="absolute inset-y-0 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center md:flex"
@@ -81,7 +81,7 @@
 			</div>
 
 			<div
-				class="mb-4 hidden grid-cols-2 gap-x-10 text-small text-muted-foreground md:grid"
+				class="mb-4 hidden grid-cols-2 gap-x-10 text-small text-foreground md:grid"
 				aria-hidden="true"
 			>
 				<span>Vorher, in der Werkstatt</span>
@@ -93,7 +93,7 @@
 					<h3 class="mb-4 text-small font-semibold">Bausatz: Aufbau beim Besucher</h3>
 					<div class="grid gap-4 md:grid-cols-2 md:gap-x-10">
 						<div class="flex flex-col gap-2">
-							<p class="text-small text-muted-foreground md:hidden">Vorher, in der Werkstatt</p>
+							<p class="text-small text-foreground md:hidden">Vorher, in der Werkstatt</p>
 							<div class="flex flex-wrap gap-2">
 								<span data-step class="{chip} flex items-center gap-2">
 									<Package class="size-5" aria-hidden="true" />
@@ -103,7 +103,7 @@
 						</div>
 						<span class="h-1 bg-primary md:hidden" data-delivery-line aria-hidden="true"></span>
 						<div class="flex flex-col gap-2">
-							<p class="text-small text-muted-foreground md:hidden">Beim Besucher</p>
+							<p class="text-small text-foreground md:hidden">Beim Besucher</p>
 							<div class="flex flex-wrap gap-2">
 								<span data-step class={chip}>Auspacken</span>
 								<span data-step class={chip}>Anleitung lesen</span>
@@ -118,7 +118,7 @@
 					<h3 class="mb-4 text-small font-semibold">Svelte: fertig geliefert</h3>
 					<div class="grid gap-4 md:grid-cols-2 md:gap-x-10">
 						<div class="flex flex-col gap-2">
-							<p class="text-small text-muted-foreground md:hidden">Vorher, in der Werkstatt</p>
+							<p class="text-small text-foreground md:hidden">Vorher, in der Werkstatt</p>
 							<div class="flex flex-wrap gap-2">
 								<span data-step class={chip}>Zusammenbauen</span>
 								<span data-step class={chip}>Prüfen</span>
@@ -127,7 +127,7 @@
 						</div>
 						<span class="h-1 bg-primary md:hidden" aria-hidden="true"></span>
 						<div class="flex flex-col gap-2">
-							<p class="text-small text-muted-foreground md:hidden">Beim Besucher</p>
+							<p class="text-small text-foreground md:hidden">Beim Besucher</p>
 							<div class="flex flex-wrap gap-2">
 								<span
 									data-step
@@ -145,7 +145,7 @@
 
 	<div class="mt-20 bg-muted py-16 lg:py-24">
 		<div class="wrap grid-12 items-start gap-y-10">
-			<Card.Root class="col-span-12 lg:col-span-6">
+			<Card.Root class="col-span-12 ring-0 lg:col-span-6">
 				<Card.Header>
 					<Card.Title class="text-small font-semibold">So sieht Svelte-Code aus</Card.Title>
 				</Card.Header>
@@ -169,7 +169,7 @@
 					<Button class="press h-12 px-6 text-small" onclick={() => klicks++}>
 						Geklickt: {klicks}
 					</Button>
-					<span class="text-small text-muted-foreground">
+					<span class="text-small text-foreground">
 						Probieren Sie es aus. Das ist genau dieser Code.
 					</span>
 				</div>

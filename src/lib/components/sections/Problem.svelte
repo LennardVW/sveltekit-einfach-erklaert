@@ -23,7 +23,7 @@
 </script>
 
 <section id="problem" aria-labelledby="problem-titel" class="section-pad">
-	<div class="wrap grid-12 gap-y-12" use:reveal use:scene={{ build, pin: true, length: 180 }}>
+	<div class="wrap grid-12 gap-y-12" use:reveal use:scene={{ build, pin: true, length: 120 }}>
 		<h2 id="problem-titel" data-reveal class="col-span-12 max-w-[20ch] text-head">
 			Viele Websites schleppen zu viel mit
 		</h2>

@@ -5,7 +5,7 @@
 	const saetze = [
 		'SvelteKit ist ein Werkzeug, mit dem man Websites baut.',
 		'Es erledigt die Arbeit vorher, damit bei Ihnen eine kleine, fertige Seite ankommt.',
-		'Das macht Websites schnell, robust und für Teams übersichtlich.'
+		'Das macht Websites schnell, zuverlässig und für Teams übersichtlich.'
 	];
 
 	// Die Sätze leuchten nacheinander auf, am Ende stehen alle drei voll da

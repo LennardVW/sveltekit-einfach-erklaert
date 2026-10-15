@@ -17,10 +17,10 @@
 		</div>
 
 		<div class="grid-12 flex-1 items-start gap-y-10">
-			<div class="col-span-12 flex h-full flex-col gap-6 lg:col-span-5">
-				<p data-reveal class="text-lead max-w-[30ch]">
-					Eine Website ist ein Paket, das Ihr Browser abholt und auspackt. SvelteKit ist ein
-					Werkzeug, mit dem dieses Paket klein und schnell ankommt, fertig ausgepackt.
+			<div class="col-span-12 flex h-full flex-col gap-6 lg:col-span-6">
+				<p data-reveal class="text-lead max-w-[42ch]">
+					Eine Website ist ein Paket, das Ihr Browser abholt. SvelteKit sorgt dafür, dass es
+					klein ist und fertig ausgepackt ankommt.
 				</p>
 				<p data-reveal class="max-w-[60ch]">
 					Der Browser ist das Programm, mit dem Sie Websites öffnen, zum Beispiel Chrome, Safari,
@@ -33,7 +33,7 @@
 				</p>
 			</div>
 
-			<div class="col-span-12 lg:col-span-7">
+			<div class="col-span-12 lg:col-span-6">
 				<Browser address="beispiel.de">
 					<div class="flex flex-col gap-5 p-5 sm:p-8">
 						<div data-piece data-reveal class="flex items-center justify-between gap-4">

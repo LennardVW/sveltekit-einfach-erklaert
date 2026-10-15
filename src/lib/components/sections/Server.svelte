@@ -65,7 +65,7 @@
 			</div>
 		</div>
 
-		<div class="mt-16" use:scene={{ build, pin: true, length: 160 }}>
+		<div class="mt-16" use:scene={{ build, pin: true, length: 130 }}>
 			<div class="grid gap-x-6 gap-y-12 md:grid-cols-2">
 				<figure class="flex flex-col gap-4">
 					<h3 class="text-lead font-semibold">Ohne fertige Seite</h3>
