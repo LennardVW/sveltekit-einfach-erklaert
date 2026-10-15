@@ -16,7 +16,7 @@ Regeln:
 - Animation nur mit GSAP und ScrollTrigger, über das zentrale Setup.
 - Minimalistisch: keine Abstraktion ohne Grund, keine toten Props, kurze Kommentare
   nur für das Warum.
-- Keine Gedankenstriche (— oder –) in Texten oder Kommentaren.
+- Keine Gedankenstriche (Unicode U+2014 und U+2013) in Texten oder Kommentaren.
 - Prüfe deine Arbeit mit `npm run check`, `npm run build` und den Tests, bevor du
   fertig meldest. Melde ehrlich, was nicht funktioniert.
 - Committe und pushe nicht, das macht der Orchestrator.

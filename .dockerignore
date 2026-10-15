@@ -1,0 +1,7 @@
+# Wird im Image selbst installiert oder erzeugt
+node_modules
+.svelte-kit
+build
+.git
+test-results
+playwright-report

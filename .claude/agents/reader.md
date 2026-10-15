@@ -11,5 +11,5 @@ Fehlermeldungen, Befehle).
 
 Einfache Aufgaben wie Umbenennungen, Textkorrekturen und Konsistenz-Checks darfst
 du direkt ausführen. Ändere dabei nichts außerhalb des Auftrags.
-Keine Gedankenstriche (— oder –) in Texten, die du schreibst.
+Keine Gedankenstriche (Unicode U+2014 und U+2013) in Texten, die du schreibst.
 Committe und pushe nicht.
