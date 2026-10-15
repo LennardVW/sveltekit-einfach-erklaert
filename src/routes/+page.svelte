@@ -1,8 +1,19 @@
 <script lang="ts">
-	import { Button } from '#lib/components/ui/button/index.js';
+	import Hero from '#lib/components/sections/Hero.svelte';
+	import Problem from '#lib/components/sections/Problem.svelte';
+	import Trick from '#lib/components/sections/Trick.svelte';
+	import Ordner from '#lib/components/sections/Ordner.svelte';
+	import Server from '#lib/components/sections/Server.svelte';
+	import Robust from '#lib/components/sections/Robust.svelte';
+	import Nutzer from '#lib/components/sections/Nutzer.svelte';
+	import Fazit from '#lib/components/sections/Fazit.svelte';
 </script>
 
-<main class="flex min-h-screen flex-col items-center justify-center gap-6 p-8">
-	<h1 class="text-4xl font-semibold tracking-tight">SvelteKit, einfach erklärt</h1>
-	<Button>Los geht's</Button>
-</main>
+<Hero />
+<Problem />
+<Trick />
+<Ordner />
+<Server />
+<Robust />
+<Nutzer />
+<Fazit />

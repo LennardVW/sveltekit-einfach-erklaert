@@ -10,5 +10,8 @@ test('Startseite lädt ohne Konsolenfehler', async ({ page }) => {
 	await page.goto('/');
 	await expect(page.locator('h1')).toBeVisible();
 	await expect(page).toHaveTitle('SvelteKit, einfach erklärt');
+	for (const id of ['start', 'problem', 'trick', 'ordner', 'server', 'robust', 'nutzer', 'fazit']) {
+		await expect(page.locator(`section#${id}`)).toBeVisible();
+	}
 	expect(errors).toEqual([]);
 });
