@@ -1,0 +1,13 @@
+// Einstellungen für GitHub Codespaces
+{
+	"name": "SvelteKit, einfach erklärt",
+	// Dasselbe Image wie bei Docker
+	"build": { "dockerfile": "../Dockerfile", "context": ".." },
+	"forwardPorts": [5173],
+	"portsAttributes": {
+		"5173": { "label": "Website", "onAutoForward": "openBrowser" }
+	},
+	// Pakete installieren, dann den Entwicklungsserver starten
+	"postCreateCommand": "npm ci",
+	"postAttachCommand": "npm run dev"
+}
